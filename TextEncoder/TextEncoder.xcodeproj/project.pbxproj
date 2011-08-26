@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDB1C1591408374500FE388C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB1C1581408374500FE388C /* Cocoa.framework */; };
+		EDB1C1631408374500FE388C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C1611408374500FE388C /* InfoPlist.strings */; };
+		EDB1C1651408374500FE388C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C1641408374500FE388C /* main.m */; };
+		EDB1C1691408374500FE388C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C1671408374500FE388C /* Credits.rtf */; };
+		EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */; };
+		EDB1C16F1408374500FE388C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C16D1408374500FE388C /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EDB1C1541408374500FE388C /* TextEncoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextEncoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB1C1581408374500FE388C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EDB1C15B1408374500FE388C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EDB1C15C1408374500FE388C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EDB1C15D1408374500FE388C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EDB1C1601408374500FE388C /* TextEncoder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TextEncoder-Info.plist"; sourceTree = "<group>"; };
+		EDB1C1621408374500FE388C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDB1C1641408374500FE388C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDB1C1661408374500FE388C /* TextEncoder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextEncoder-Prefix.pch"; sourceTree = "<group>"; };
+		EDB1C1681408374500FE388C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EDB1C16A1408374500FE388C /* TextEncoderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextEncoderAppDelegate.h; sourceTree = "<group>"; };
+		EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextEncoderAppDelegate.m; sourceTree = "<group>"; };
+		EDB1C16E1408374500FE388C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB1C1511408374400FE388C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB1C1591408374500FE388C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDB1C1491408374400FE388C = {
+			isa = PBXGroup;
+			children = (
+				EDB1C15E1408374500FE388C /* TextEncoder */,
+				EDB1C1571408374500FE388C /* Frameworks */,
+				EDB1C1551408374500FE388C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDB1C1551408374500FE388C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDB1C1541408374500FE388C /* TextEncoder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB1C1571408374500FE388C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDB1C1581408374500FE388C /* Cocoa.framework */,
+				EDB1C15A1408374500FE388C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDB1C15A1408374500FE388C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDB1C15B1408374500FE388C /* AppKit.framework */,
+				EDB1C15C1408374500FE388C /* CoreData.framework */,
+				EDB1C15D1408374500FE388C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EDB1C15E1408374500FE388C /* TextEncoder */ = {
+			isa = PBXGroup;
+			children = (
+				EDB1C16A1408374500FE388C /* TextEncoderAppDelegate.h */,
+				EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */,
+				EDB1C16D1408374500FE388C /* MainMenu.xib */,
+				EDB1C15F1408374500FE388C /* Supporting Files */,
+			);
+			path = TextEncoder;
+			sourceTree = "<group>";
+		};
+		EDB1C15F1408374500FE388C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDB1C1601408374500FE388C /* TextEncoder-Info.plist */,
+				EDB1C1611408374500FE388C /* InfoPlist.strings */,
+				EDB1C1641408374500FE388C /* main.m */,
+				EDB1C1661408374500FE388C /* TextEncoder-Prefix.pch */,
+				EDB1C1671408374500FE388C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDB1C1531408374400FE388C /* TextEncoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB1C1721408374500FE388C /* Build configuration list for PBXNativeTarget "TextEncoder" */;
+			buildPhases = (
+				EDB1C1501408374400FE388C /* Sources */,
+				EDB1C1511408374400FE388C /* Frameworks */,
+				EDB1C1521408374400FE388C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextEncoder;
+			productName = TextEncoder;
+			productReference = EDB1C1541408374500FE388C /* TextEncoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB1C14B1408374400FE388C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = House;
+			};
+			buildConfigurationList = EDB1C14E1408374400FE388C /* Build configuration list for PBXProject "TextEncoder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EDB1C1491408374400FE388C;
+			productRefGroup = EDB1C1551408374500FE388C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDB1C1531408374400FE388C /* TextEncoder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB1C1521408374400FE388C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB1C1631408374500FE388C /* InfoPlist.strings in Resources */,
+				EDB1C1691408374500FE388C /* Credits.rtf in Resources */,
+				EDB1C16F1408374500FE388C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB1C1501408374400FE388C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB1C1651408374500FE388C /* main.m in Sources */,
+				EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDB1C1611408374500FE388C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB1C1621408374500FE388C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EDB1C1671408374500FE388C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB1C1681408374500FE388C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EDB1C16D1408374500FE388C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB1C16E1408374500FE388C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB1C1701408374500FE388C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EDB1C1711408374500FE388C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EDB1C1731408374500FE388C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TextEncoder/TextEncoder-Prefix.pch";
+				INFOPLIST_FILE = "TextEncoder/TextEncoder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EDB1C1741408374500FE388C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TextEncoder/TextEncoder-Prefix.pch";
+				INFOPLIST_FILE = "TextEncoder/TextEncoder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB1C14E1408374400FE388C /* Build configuration list for PBXProject "TextEncoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB1C1701408374500FE388C /* Debug */,
+				EDB1C1711408374500FE388C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB1C1721408374500FE388C /* Build configuration list for PBXNativeTarget "TextEncoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB1C1731408374500FE388C /* Debug */,
+				EDB1C1741408374500FE388C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDB1C14B1408374400FE388C /* Project object */;
+}

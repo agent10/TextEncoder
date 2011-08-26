@@ -13,6 +13,7 @@
 		EDB1C1691408374500FE388C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C1671408374500FE388C /* Credits.rtf */; };
 		EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */; };
 		EDB1C16F1408374500FE388C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C16D1408374500FE388C /* MainMenu.xib */; };
+		EDB1C17D140838D400FE388C /* Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C17C140838D400FE388C /* Encoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		EDB1C16A1408374500FE388C /* TextEncoderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextEncoderAppDelegate.h; sourceTree = "<group>"; };
 		EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextEncoderAppDelegate.m; sourceTree = "<group>"; };
 		EDB1C16E1408374500FE388C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EDB1C17B140838D400FE388C /* Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encoder.h; sourceTree = "<group>"; };
+		EDB1C17C140838D400FE388C /* Encoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		EDB1C15E1408374500FE388C /* TextEncoder */ = {
 			isa = PBXGroup;
 			children = (
+				EDB1C17B140838D400FE388C /* Encoder.h */,
+				EDB1C17C140838D400FE388C /* Encoder.m */,
 				EDB1C16A1408374500FE388C /* TextEncoderAppDelegate.h */,
 				EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */,
 				EDB1C16D1408374500FE388C /* MainMenu.xib */,
@@ -167,6 +172,7 @@
 			files = (
 				EDB1C1651408374500FE388C /* main.m in Sources */,
 				EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */,
+				EDB1C17D140838D400FE388C /* Encoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

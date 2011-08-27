@@ -13,8 +13,11 @@
     IBOutlet id popover;
     IBOutlet id textField;
     IBOutlet id decodedTextField;
+    NSInteger countChangedInPasteboard;
+    NSStatusItem* statusItem;
 }
 
 -(IBAction) decode:(id)sender;
+-(void) checkPasteboard:(id)param;
 
 @end

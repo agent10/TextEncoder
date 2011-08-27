@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED6C7A7014085DCC00BEF073 /* TEPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */; };
-		ED6C7A781408EF8300BEF073 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6C7A761408EF8300BEF073 /* Status.png */; };
-		ED6C7A791408EF8300BEF073 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6C7A771408EF8300BEF073 /* StatusHighlighted.png */; };
+		ED6C7A8014094AD100BEF073 /* TEStatusItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7A7F14094AD100BEF073 /* TEStatusItem.m */; };
+		ED6C7A821409501E00BEF073 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6C7A811409501E00BEF073 /* Status.png */; };
 		EDB1C1591408374500FE388C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB1C1581408374500FE388C /* Cocoa.framework */; };
 		EDB1C1631408374500FE388C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C1611408374500FE388C /* InfoPlist.strings */; };
 		EDB1C1651408374500FE388C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C1641408374500FE388C /* main.m */; };
@@ -22,8 +22,9 @@
 /* Begin PBXFileReference section */
 		ED6C7A6D14085DCC00BEF073 /* TEPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEPopoverViewController.h; sourceTree = "<group>"; };
 		ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEPopoverViewController.m; sourceTree = "<group>"; };
-		ED6C7A761408EF8300BEF073 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
-		ED6C7A771408EF8300BEF073 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
+		ED6C7A7E14094AD100BEF073 /* TEStatusItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEStatusItem.h; sourceTree = "<group>"; };
+		ED6C7A7F14094AD100BEF073 /* TEStatusItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEStatusItem.m; sourceTree = "<group>"; };
+		ED6C7A811409501E00BEF073 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
 		EDB1C1541408374500FE388C /* TextEncoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextEncoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB1C1581408374500FE388C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EDB1C15B1408374500FE388C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -100,6 +101,7 @@
 		EDB1C15E1408374500FE388C /* TextEncoder */ = {
 			isa = PBXGroup;
 			children = (
+				ED6C7A811409501E00BEF073 /* Status.png */,
 				ED36E80614083D00009D9E71 /* XIBs */,
 				EDB1C17B140838D400FE388C /* Encoder.h */,
 				EDB1C17C140838D400FE388C /* Encoder.m */,
@@ -108,6 +110,8 @@
 				EDB1C15F1408374500FE388C /* Supporting Files */,
 				ED6C7A6D14085DCC00BEF073 /* TEPopoverViewController.h */,
 				ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */,
+				ED6C7A7E14094AD100BEF073 /* TEStatusItem.h */,
+				ED6C7A7F14094AD100BEF073 /* TEStatusItem.m */,
 			);
 			path = TextEncoder;
 			sourceTree = "<group>";
@@ -115,8 +119,6 @@
 		EDB1C15F1408374500FE388C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ED6C7A761408EF8300BEF073 /* Status.png */,
-				ED6C7A771408EF8300BEF073 /* StatusHighlighted.png */,
 				EDB1C1601408374500FE388C /* TextEncoder-Info.plist */,
 				EDB1C1611408374500FE388C /* InfoPlist.strings */,
 				EDB1C1641408374500FE388C /* main.m */,
@@ -179,8 +181,7 @@
 				EDB1C1631408374500FE388C /* InfoPlist.strings in Resources */,
 				EDB1C1691408374500FE388C /* Credits.rtf in Resources */,
 				EDB1C16F1408374500FE388C /* MainMenu.xib in Resources */,
-				ED6C7A781408EF8300BEF073 /* Status.png in Resources */,
-				ED6C7A791408EF8300BEF073 /* StatusHighlighted.png in Resources */,
+				ED6C7A821409501E00BEF073 /* Status.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +196,7 @@
 				EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */,
 				EDB1C17D140838D400FE388C /* Encoder.m in Sources */,
 				ED6C7A7014085DCC00BEF073 /* TEPopoverViewController.m in Sources */,
+				ED6C7A8014094AD100BEF073 /* TEStatusItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

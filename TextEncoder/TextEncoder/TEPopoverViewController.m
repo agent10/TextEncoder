@@ -21,18 +21,31 @@
     return self;
 }
 
-- (IBAction)decode:(id)sender
+- (void)onStatusBarClicked:(id)sender
 {
     [popover setBehavior:NSPopoverBehaviorTransient];
     [popover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxYEdge];
+
+}
+
+- (IBAction)decode:(id)sender
+{
     Encoder* encoder = [Encoder new];
     NSString* text = [textField stringValue];
-    [decodedTextField setStringValue:[encoder decodeNSString:text]];
+    [decodedTextField insertText:[encoder decodeNSString:text]];
 }
 
 - (void) awakeFromNib
 {
     [textField setStringValue:@"Ïðîäîëæèì?:)"];
+    
+    NSStatusItem* statusitem = [[[NSStatusBar systemStatusBar]
+                                 statusItemWithLength:NSVariableStatusItemLength] retain];
+    [statusitem setHighlightMode:YES];
+    [statusitem setTitle:@"TE"];
+    [statusitem setTarget:self];
+    [statusitem setAction:@selector(onStatusBarClicked:)];
+
 }
 
 @end

@@ -22,21 +22,29 @@
     return self;
 }
 
+- (void) autoClosePopover: (NSTimer*)timer
+{
+    [popover close];
+}
+
+- (void)popoverDidShow: (NSNotification*)notification
+{
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(autoClosePopover:) userInfo:nil repeats:NO];
+}
+
 - (void)onStatusBarClicked:(id)sender
 {
     [popover setBehavior:NSPopoverBehaviorTransient];
     [popover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxYEdge];
-    
+
     NSPasteboard *thePasteboard = [NSPasteboard generalPasteboard];
     NSString* stringFromPasteboard = [thePasteboard stringForType:NSPasteboardTypeString];
     if (stringFromPasteboard != NULL && [stringFromPasteboard length] != 0) {
-        [textField setStringValue:stringFromPasteboard];
-        [self decode:nil];
+        [self decode:stringFromPasteboard];
     }
-
 }
 
--(void) checkPasteboard:(id)param;
+- (void) checkPasteboard:(id)param;
 {
     while(1) {
         NSPasteboard *thePasteboard = [NSPasteboard generalPasteboard];
@@ -44,31 +52,34 @@
             countChangedInPasteboard = [thePasteboard changeCount];
             if (statusItem != nil) {
                 id sender = [statusItem view];
-                [self onStatusBarClicked:sender];
+                [NSApp sendAction:@selector(onStatusBarClicked:) to:self from:sender];
             }
         }
         sleep(1);
     }
 }
 
-- (IBAction)decode:(id)sender
+- (void)decode:(NSString*)string
 {
     Encoder *encoder = [Encoder new];
-    NSString* text = [textField stringValue];
-    [decodedTextField setString: [encoder decodeNSString:text]];
+    [decodedTextField setFont:[NSFont fontWithName:@"Baskerville" size:15]];
+    [decodedTextField setString: [encoder decodeNSString:string checkCP1251:NO]];
     [encoder release];
 }
 
 - (void) awakeFromNib
 {    
     TEStatusItem* view = [[TEStatusItem alloc] initWithFrame:NSMakeRect(0, 0, 24, 24)];
-    [view setAction:@selector(onStatusBarClicked:)];
-    [view setTarget:self];
+    //[view setAction:@selector(onStatusBarClicked:)];
+    //[view setTarget:self];
     
     statusItem = [[[NSStatusBar systemStatusBar]
                                  statusItemWithLength:NSSquareStatusItemLength] retain];
     [statusItem setHighlightMode:NO];
     [statusItem setView:view];
+    
+    NSPopover* p = (NSPopover*) popover;
+    p.delegate = (id<NSPopoverDelegate>)self;
     
     countChangedInPasteboard =[[NSPasteboard generalPasteboard] changeCount];
     

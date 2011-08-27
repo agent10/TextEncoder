@@ -30,25 +30,31 @@
     return [NSString stringWithCString:in_buff encoding:NSUTF8StringEncoding];
 }
 
-- (NSString* )decodeNSString:(NSString* )string
+- (NSString* )decodeNSString:(NSString* )string checkCP1251:(BOOL)check
 {
     const char* in_buff = [self getCharPointer:string];
-    char* decoded_buff = [self decode:in_buff];
+    char* decoded_buff = [self decode:in_buff checkCP1251:NO];
     NSString* out_string = [self getNSString:decoded_buff];
     return out_string;
 }
 
-- (char *)decode:(const char *)in_buff
+- (char *)decode:(const char *)in_buff checkCP1251:(BOOL)check
 {
     const char* in = in_buff;
     int len = strlen(in);
     char* out = NewPtr(len+1);// = new char[len+1];
+    int charnotcp1251 = 0;
     int i = 0;
     while(i < len) {
         unsigned char first_byte_in = (unsigned char)in[i];
         unsigned char second_byte_in = (unsigned char)in[i+1];
-        //printf("character_in = %d, first_byte_in = %X, second_byte_in = %X\n", i, first_byte_in, second_byte_in);
         if(first_byte_in != 0xc3) {
+            charnotcp1251++;
+            if (charnotcp1251 > 5 && check) {
+                //TODO
+                //Memory out should be free
+                return nil;
+            }
             out[i] = first_byte_in;
             i++;
             continue;
@@ -64,7 +70,7 @@
         }
         out[i] = first_byte_out;
         out[i+1] = second_byte_out;
-        //printf("character_out = %d, first_byte_out = %X, second_byte_out = %X\n", i, first_byte_out, second_byte_out);
+        
         i += 2;
     }
     out[len] = '\0';

@@ -12,7 +12,7 @@
 
 - (char* ) getCharPointer:(NSString*) string;
 - (NSString *) getNSString:(char *) in_buff;
-- (char* )decode:(const char* )in_buff;
-- (NSString* )decodeNSString:(NSString* )string;
+- (char* )decode:(const char* )in_buff checkCP1251:(BOOL)check;
+- (NSString* )decodeNSString:(NSString* )string checkCP1251:(BOOL)check;
 
 @end

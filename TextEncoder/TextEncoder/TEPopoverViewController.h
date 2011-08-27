@@ -11,13 +11,12 @@
 @interface TEPopoverViewController : NSViewController
 {
     IBOutlet id popover;
-    IBOutlet id textField;
     IBOutlet id decodedTextField;
     NSInteger countChangedInPasteboard;
     NSStatusItem* statusItem;
 }
 
--(IBAction) decode:(id)sender;
+-(void) decode:(NSString*)string;
 -(void) checkPasteboard:(id)param;
 
 @end

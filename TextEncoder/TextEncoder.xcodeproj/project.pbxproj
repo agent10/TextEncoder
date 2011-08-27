@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED6C7A7014085DCC00BEF073 /* TEPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */; };
 		EDB1C1591408374500FE388C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB1C1581408374500FE388C /* Cocoa.framework */; };
 		EDB1C1631408374500FE388C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C1611408374500FE388C /* InfoPlist.strings */; };
 		EDB1C1651408374500FE388C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C1641408374500FE388C /* main.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED6C7A6D14085DCC00BEF073 /* TEPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEPopoverViewController.h; sourceTree = "<group>"; };
+		ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEPopoverViewController.m; sourceTree = "<group>"; };
 		EDB1C1541408374500FE388C /* TextEncoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextEncoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB1C1581408374500FE388C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EDB1C15B1408374500FE388C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -46,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED36E80614083D00009D9E71 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				EDB1C16D1408374500FE388C /* MainMenu.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
 		EDB1C1491408374400FE388C = {
 			isa = PBXGroup;
 			children = (
@@ -85,12 +96,14 @@
 		EDB1C15E1408374500FE388C /* TextEncoder */ = {
 			isa = PBXGroup;
 			children = (
+				ED36E80614083D00009D9E71 /* XIBs */,
 				EDB1C17B140838D400FE388C /* Encoder.h */,
 				EDB1C17C140838D400FE388C /* Encoder.m */,
 				EDB1C16A1408374500FE388C /* TextEncoderAppDelegate.h */,
 				EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */,
-				EDB1C16D1408374500FE388C /* MainMenu.xib */,
 				EDB1C15F1408374500FE388C /* Supporting Files */,
+				ED6C7A6D14085DCC00BEF073 /* TEPopoverViewController.h */,
+				ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */,
 			);
 			path = TextEncoder;
 			sourceTree = "<group>";
@@ -173,6 +186,7 @@
 				EDB1C1651408374500FE388C /* main.m in Sources */,
 				EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */,
 				EDB1C17D140838D400FE388C /* Encoder.m in Sources */,
+				ED6C7A7014085DCC00BEF073 /* TEPopoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +306,7 @@
 				EDB1C1741408374500FE388C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,16 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Encoder.h"
+#import "TEStatusItem.h"
 
-@interface TEPopoverViewController : NSViewController
+@interface TEPopoverViewController : NSViewController <NSPopoverDelegate>
 {
     IBOutlet id popover;
     IBOutlet id decodedTextField;
     NSInteger countChangedInPasteboard;
     NSStatusItem* statusItem;
+    NSPasteboard *thePasteboard;
+    TEStatusItem* TEstatusItem;
+    Encoder *encoder;
 }
 
--(void) decode:(NSString*)string;
+-(NSString*) decode:(NSString*)string;
 -(void) checkPasteboard:(id)param;
+-(void)showPopover:(NSString*)decodedString;
 
 @end

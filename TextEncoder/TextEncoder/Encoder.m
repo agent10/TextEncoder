@@ -35,6 +35,7 @@
     const char* in_buff = [self getCharPointer:string];
     char* decoded_buff = [self decode:in_buff checkCP1251:NO];
     NSString* out_string = [self getNSString:decoded_buff];
+    free(decoded_buff);
     return out_string;
 }
 

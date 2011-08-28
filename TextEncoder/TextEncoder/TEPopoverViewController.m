@@ -7,8 +7,6 @@
 //
 
 #import "TEPopoverViewController.h"
-#import "Encoder.h"
-#import "TEStatusItem.h"
 
 @implementation TEPopoverViewController
 
@@ -22,6 +20,13 @@
     return self;
 }
 
+- (void) dealloc
+{
+    [encoder release];
+    [TEstatusItem release];
+    [super dealloc];
+}
+
 - (void) autoClosePopover: (NSTimer*)timer
 {
     [popover close];
@@ -29,61 +34,67 @@
 
 - (void)popoverDidShow: (NSNotification*)notification
 {
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(autoClosePopover:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoClosePopover:) userInfo:nil repeats:NO];
 }
 
-- (void)onStatusBarClicked:(id)sender
+- (void)pasteboardUpdated
 {
-    [popover setBehavior:NSPopoverBehaviorTransient];
-    [popover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxYEdge];
-
-    NSPasteboard *thePasteboard = [NSPasteboard generalPasteboard];
     NSString* stringFromPasteboard = [thePasteboard stringForType:NSPasteboardTypeString];
     if (stringFromPasteboard != NULL && [stringFromPasteboard length] != 0) {
-        [self decode:stringFromPasteboard];
+        NSString* decodedString = [self decode:stringFromPasteboard];
+        [self showPopover:decodedString];
+    }
+}
+
+- (void)showPopover:(NSString*)decodedString
+{
+    if(![popover isShown]) {
+        if (statusItem != nil) {
+            id sender = [statusItem view];
+            [decodedTextField setString: decodedString];
+            [popover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxYEdge];
+        }
     }
 }
 
 - (void) checkPasteboard:(id)param;
 {
     while(1) {
-        NSPasteboard *thePasteboard = [NSPasteboard generalPasteboard];
         if([thePasteboard changeCount] != countChangedInPasteboard) {
             countChangedInPasteboard = [thePasteboard changeCount];
-            if (statusItem != nil) {
-                id sender = [statusItem view];
-                [NSApp sendAction:@selector(onStatusBarClicked:) to:self from:sender];
-            }
+            [self pasteboardUpdated];
         }
         sleep(1);
     }
 }
 
-- (void)decode:(NSString*)string
+- (NSString*)decode:(NSString*)string
 {
-    Encoder *encoder = [Encoder new];
-    [decodedTextField setFont:[NSFont fontWithName:@"Baskerville" size:15]];
-    [decodedTextField setString: [encoder decodeNSString:string checkCP1251:NO]];
-    [encoder release];
+    return [encoder decodeNSString:string checkCP1251:NO];
 }
 
 - (void) awakeFromNib
-{    
-    TEStatusItem* view = [[TEStatusItem alloc] initWithFrame:NSMakeRect(0, 0, 24, 24)];
-    //[view setAction:@selector(onStatusBarClicked:)];
-    //[view setTarget:self];
+{        
+    encoder = [Encoder new];
+    
+    [popover setBehavior:NSPopoverBehaviorTransient];
+    thePasteboard = [NSPasteboard generalPasteboard];
+    
+    TEstatusItem = [[TEStatusItem alloc] initWithFrame:NSMakeRect(0, 0, 24, 24)];
     
     statusItem = [[[NSStatusBar systemStatusBar]
-                                 statusItemWithLength:NSSquareStatusItemLength] retain];
+                   statusItemWithLength:NSSquareStatusItemLength] retain];
     [statusItem setHighlightMode:NO];
-    [statusItem setView:view];
+    [statusItem setView:TEstatusItem];
     
-    NSPopover* p = (NSPopover*) popover;
-    p.delegate = (id<NSPopoverDelegate>)self;
+    [decodedTextField setFont:[NSFont fontWithName:@"Baskerville" size:15]];
     
-    countChangedInPasteboard =[[NSPasteboard generalPasteboard] changeCount];
+    countChangedInPasteboard =[thePasteboard changeCount];
     
     [NSThread detachNewThreadSelector:@selector(checkPasteboard:) toTarget:self withObject:nil];
+    
+    NSPopover* p = (NSPopover*) popover;
+    p.delegate = self;
 
 }
 

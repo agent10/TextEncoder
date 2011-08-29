@@ -59,7 +59,7 @@
 				<nil key="NSNextResponder"/>
 				<reference key="NSContentViewController" ref="618442774"/>
 				<int key="NSAppearance">0</int>
-				<int key="NSBehavior">0</int>
+				<int key="NSBehavior">1</int>
 				<double key="NSContentWidth">0.0</double>
 				<double key="NSContentHeight">0.0</double>
 				<bool key="NSAnimates">YES</bool>
@@ -90,7 +90,7 @@
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
 								<string key="NSColorName">textBackgroundColor</string>
-								<object class="NSColor" key="NSColor">
+								<object class="NSColor" key="NSColor" id="952191011">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
@@ -168,10 +168,10 @@
 									<object class="NSTextView" id="490478854">
 										<reference key="NSNextResponder" ref="717276214"/>
 										<int key="NSvFlags">2322</int>
-										<string key="NSFrameSize">{201, 21}</string>
+										<string key="NSFrame">{{0, 7}, {201, 14}}</string>
 										<reference key="NSSuperview" ref="717276214"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="575214393"/>
+										<reference key="NSNextKeyView" ref="74032909"/>
 										<string key="NSReuseIdentifierKey">_NS:3760</string>
 										<object class="NSTextContainer" key="NSTextContainer" id="223680794">
 											<object class="NSLayoutManager" key="NSLayoutManager">
@@ -196,10 +196,7 @@
 											<int key="NSFlags">67120868</int>
 											<int key="NSTextCheckingTypes">0</int>
 											<nil key="NSMarkedAttributes"/>
-											<object class="NSColor" key="NSBackgroundColor">
-												<int key="NSColorSpace">3</int>
-												<bytes key="NSWhite">MQA</bytes>
-											</object>
+											<reference key="NSBackgroundColor" ref="952191011"/>
 											<object class="NSDictionary" key="NSSelectedAttributes">
 												<bool key="EncodedWithXMLCoder">YES</bool>
 												<object class="NSArray" key="dict.sortedKeys">
@@ -272,7 +269,7 @@
 									<bytes key="NSWhite">MSAwAA</bytes>
 								</object>
 								<object class="NSCursor" key="NSCursor">
-									<string key="NSHotSpot">{4, 4}</string>
+									<string key="NSHotSpot">{1, -1}</string>
 									<int key="NSCursorType">0</int>
 								</object>
 								<int key="NScvFlags">2</int>
@@ -283,7 +280,6 @@
 								<string key="NSFrame">{{114, 1}, {15, 60}}</string>
 								<reference key="NSSuperview" ref="977758020"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:3774</string>
 								<reference key="NSTarget" ref="977758020"/>
 								<string key="NSAction">_doScroller:</string>
@@ -308,7 +304,7 @@
 						<string key="NSFrame">{{15, 11}, {201, 49}}</string>
 						<reference key="NSSuperview" ref="978189300"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="74032909"/>
+						<reference key="NSNextKeyView" ref="717276214"/>
 						<string key="NSReuseIdentifierKey">_NS:148</string>
 						<int key="NSsFlags">133648</int>
 						<reference key="NSVScroller" ref="575214393"/>
@@ -582,28 +578,15 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">TEPopoverViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">decode:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">decode:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">decode:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>decodedTextField</string>
 							<string>popover</string>
-							<string>textField</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -614,7 +597,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>decodedTextField</string>
 							<string>popover</string>
-							<string>textField</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -624,10 +606,6 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">popover</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">textField</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

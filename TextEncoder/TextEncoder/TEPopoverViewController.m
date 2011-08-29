@@ -37,18 +37,17 @@
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoClosePopover:) userInfo:nil repeats:NO];
 }
 
-- (void)pasteboardUpdated
+- (void)pasteboardUpdated:(NSNotification *)pNotification
 {
-    NSString* stringFromPasteboard = [thePasteboard stringForType:NSPasteboardTypeString];
-    if (stringFromPasteboard != NULL && [stringFromPasteboard length] != 0) {
-        NSString* decodedString = [self decode:stringFromPasteboard];
-        [self showPopover:decodedString];
+    NSString* stringFromPasteboard = (NSString*)[pNotification object];
+    if (stringFromPasteboard != nil && [stringFromPasteboard length] != 0) {
+        [self showPopover:[self decode:stringFromPasteboard]];
     }
 }
 
 - (void)showPopover:(NSString*)decodedString
 {
-    if(![popover isShown]) {
+    if(![popover isShown] && decodedString != nil) {
         if (statusItem != nil) {
             id sender = [statusItem view];
             [decodedTextField setString: decodedString];
@@ -57,28 +56,14 @@
     }
 }
 
-- (void) checkPasteboard:(id)param;
-{
-    while(1) {
-        if([thePasteboard changeCount] != countChangedInPasteboard) {
-            countChangedInPasteboard = [thePasteboard changeCount];
-            [self pasteboardUpdated];
-        }
-        sleep(1);
-    }
-}
-
 - (NSString*)decode:(NSString*)string
 {
-    return [encoder decodeNSString:string checkCP1251:NO];
+    return [encoder decodeNSString:string checkCP1251:YES];
 }
 
 - (void) awakeFromNib
 {        
     encoder = [Encoder new];
-    
-    [popover setBehavior:NSPopoverBehaviorTransient];
-    thePasteboard = [NSPasteboard generalPasteboard];
     
     TEstatusItem = [[TEStatusItem alloc] initWithFrame:NSMakeRect(0, 0, 24, 24)];
     
@@ -89,9 +74,8 @@
     
     [decodedTextField setFont:[NSFont fontWithName:@"Baskerville" size:15]];
     
-    countChangedInPasteboard =[thePasteboard changeCount];
-    
-    [NSThread detachNewThreadSelector:@selector(checkPasteboard:) toTarget:self withObject:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pasteboardUpdated:)
+                                                 name:@"pasteboardUpdated" object:nil];
     
     NSPopover* p = (NSPopover*) popover;
     p.delegate = self;

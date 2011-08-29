@@ -15,6 +15,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    pasteboardObserver = [[TEPasteboardObserver alloc] init];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+    [pasteboardObserver release];
 }
 
 @end

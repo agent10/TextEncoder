@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Encoder : NSObject
-
-- (char* ) getCharPointer:(NSString*) string;
+{
+    
+}
 - (NSString *) getNSString:(char *) in_buff;
 - (char* )decode:(const char* )in_buff checkCP1251:(BOOL)check;
 - (NSString* )decodeNSString:(NSString* )string checkCP1251:(BOOL)check;

@@ -17,6 +17,7 @@
 		EDB1C16C1408374500FE388C /* TextEncoderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C16B1408374500FE388C /* TextEncoderAppDelegate.m */; };
 		EDB1C16F1408374500FE388C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB1C16D1408374500FE388C /* MainMenu.xib */; };
 		EDB1C17D140838D400FE388C /* Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1C17C140838D400FE388C /* Encoder.m */; };
+		EDC12FB2140C11CE00465246 /* TEPasteboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC12FB1140C11CE00465246 /* TEPasteboardObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		EDB1C16E1408374500FE388C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		EDB1C17B140838D400FE388C /* Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encoder.h; sourceTree = "<group>"; };
 		EDB1C17C140838D400FE388C /* Encoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encoder.m; sourceTree = "<group>"; };
+		EDC12FB0140C11CE00465246 /* TEPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEPasteboardObserver.h; sourceTree = "<group>"; };
+		EDC12FB1140C11CE00465246 /* TEPasteboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEPasteboardObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				ED6C7A6E14085DCC00BEF073 /* TEPopoverViewController.m */,
 				ED6C7A7E14094AD100BEF073 /* TEStatusItem.h */,
 				ED6C7A7F14094AD100BEF073 /* TEStatusItem.m */,
+				EDC12FB0140C11CE00465246 /* TEPasteboardObserver.h */,
+				EDC12FB1140C11CE00465246 /* TEPasteboardObserver.m */,
 			);
 			path = TextEncoder;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				EDB1C17D140838D400FE388C /* Encoder.m in Sources */,
 				ED6C7A7014085DCC00BEF073 /* TEPopoverViewController.m in Sources */,
 				ED6C7A8014094AD100BEF073 /* TEStatusItem.m in Sources */,
+				EDC12FB2140C11CE00465246 /* TEPasteboardObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

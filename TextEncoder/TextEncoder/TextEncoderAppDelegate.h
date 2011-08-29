@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TEPasteboardObserver.h"
 
 @interface TextEncoderAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+    TEPasteboardObserver *pasteboardObserver;
 }
 
 @property (assign) IBOutlet NSWindow *window;

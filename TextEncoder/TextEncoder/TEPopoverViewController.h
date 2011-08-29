@@ -14,15 +14,12 @@
 {
     IBOutlet id popover;
     IBOutlet id decodedTextField;
-    NSInteger countChangedInPasteboard;
     NSStatusItem* statusItem;
-    NSPasteboard *thePasteboard;
     TEStatusItem* TEstatusItem;
     Encoder *encoder;
 }
 
 -(NSString*) decode:(NSString*)string;
--(void) checkPasteboard:(id)param;
 -(void)showPopover:(NSString*)decodedString;
 
 @end

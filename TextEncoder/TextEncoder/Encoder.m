@@ -51,6 +51,20 @@
     while(i < len) {
         first_byte_in = (unsigned char)in[i];
         second_byte_in = (unsigned char)in[i+1];
+        //Small and capital leters IO
+        if(first_byte_in == 0xc2 && second_byte_in == 0xa8) {
+            out[i] = 0xd0;
+            out[i+1] = 0x81;
+            i += 2;
+            continue;
+        }
+        if(first_byte_in == 0xc2 && second_byte_in == 0xb8) {
+            out[i] = 0xd1;
+            out[i+1] = 0x91;
+            i += 2;
+            continue;
+        }
+        
         if(first_byte_in != 0xc3) {
             out[i] = first_byte_in;
             i++;

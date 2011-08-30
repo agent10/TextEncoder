@@ -76,9 +76,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pasteboardUpdated:)
                                                  name:@"pasteboardUpdated" object:nil];
-    
-    NSPopover* p = (NSPopover*) popover;
-    p.delegate = self;
 
 }
 
